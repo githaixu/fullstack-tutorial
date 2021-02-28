@@ -9,7 +9,11 @@ const UserAPI = require('./datasources/user');
 const store = createStore();
 
 const server = new ApolloServer({ 
+    // schema
     typeDefs,
+    // Apollo Server accepts a dataSources function that expects your data sources.
+    // These data sources are then accessible inside your GraphQL resolver context
+    // @see https://dev.to/graphcms/create-your-own-apollo-data-source-package-1o4m
     dataSources: () => ({
         launchAPI: new LaunchAPI(),
         userAPI: new UserAPI({ store })
