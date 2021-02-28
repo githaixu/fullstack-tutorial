@@ -1,4 +1,4 @@
-const { gql } = require('graphql');
+const { gql } = require('apollo-server');
 
 
 // we are going to write scheme useing SDL(schema definition language)
